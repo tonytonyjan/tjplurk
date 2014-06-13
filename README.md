@@ -28,7 +28,7 @@ require 'tjplurk'
 
 api = Tjplurk::API.new
 api.real_time do |plurk|
-  puts JSON.pretty_generate plurk
+  jj plurk
 end
 ```
 
