@@ -1,10 +1,10 @@
-## Install
+## 安裝
 
 ```
 $ gem install tjplurk
 ```
 
-## Usage
+## 使用
 
 ```ruby
 api = Tjplurk::API.new CONSUMER_KEY, CONSUMER_SECRET, TOKEN_KEY, TOKEN_SECRET
@@ -12,16 +12,16 @@ api.request('/APP/Users/me') # => Hash object
 api.request('/APP/Timeline/plurkAdd', content: 'haha', qualifier: 'says') # => Hash object
 ```
 
-You can save your `CONSUMER_KEY`, `CONSUMER_SECRET`, `TOKEN_KEY`, `TOKEN_SECRET` in `$HOME/.tjplurk` per line, and `Tjplurk::API.new` will work as well, for example:
+如果將 `CONSUMER_KEY`, `CONSUMER_SECRET`, `TOKEN_KEY`, `TOKEN_SECRET` 逐行寫在 `$HOME/.tjplurk`，`Tjplurk::API.new` 就可以不用給參數，舉例：
 
 ```ruby
 api = Tjplurk::API.new
 api.request('/APP/Users/me')
 ```
 
-## Command Line Usage
+## 在命令列中使用
 
-For the first time, you should use `tjplurk auth` to get access token and secret:
+第一次使用的時候，可以先透過 `tjplurk auth` 取得 access token：
 
 ```
 $ tjplurk auth CONSUMER_KEY CONSUMER_SECRET
@@ -30,16 +30,16 @@ Enter Verification Number: *****
 Key & secret successfully saved to "$HOME/.tjplurk".
 ```
 
-Your consumer key/secret and token key/secret will be saved to `$HOME/.tjplurk`. Then you can use all Plurk API:
+你的所有 key/secret 將會被存在 `$HOME/.tjplurk`，然後我們就可以使用 Plurk API 了：
 
 ```
 $ tjplurk api /APP/Users/me
 $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
 ```
 
-For more available API paths, see http://www.plurk.com/API
+更多使用方式請參考： http://www.plurk.com/API
 
-### Pretty print
+### 讓輸出結果更漂漂
 
 ```
 $ tjplurk api /APP/Users/me | python -mjson.tool
@@ -49,13 +49,13 @@ $ tjplurk api /APP/Users/me | python -mjson.tool
 $ tjplurk api /APP/Users/me | ruby -rjson -e 'puts JSON.pretty_generate JSON.parse(ARGF.read)'
 ```
 
-### Commands
+### 指令
 
 ```
 tjplurk auth CONSUMER_KEY CONSUMER_SECRET  # get access token interactivly.
 tjplurk api PATH ["FOO=BAR" ...]           # send an API request.
 ```
 
-## Develop
+## 開發
 
-Before running rspec, please create `$HOME/.tjplurk` first.
+在執行 `rspec` 之前，請先確保 `$HOME/.tjplurk` 已設定。
