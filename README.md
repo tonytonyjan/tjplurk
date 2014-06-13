@@ -37,6 +37,16 @@ $ tjplurk api /APP/Timeline/plurkAdd "content=hello world" qualifier=says
 
 For more available API paths, see http://www.plurk.com/API
 
+Pretty print:
+
+```
+$ tjplurk api /APP/Users/me | python -mjson.tool
+```
+
+```
+$ tjplurk api /APP/Users/me | ruby -rjson -e 'puts JSON.pretty_generate JSON.parse(ARGF.read)'
+```
+
 ## Commands
 
 ```
