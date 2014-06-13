@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'tjplurk/cli'
+Tjplurk::Cli.start(ARGV)
