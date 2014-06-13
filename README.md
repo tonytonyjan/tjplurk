@@ -59,7 +59,7 @@ $ tjplurk api /APP/Users/me | python -mjson.tool
 ```
 
 ```
-$ tjplurk api /APP/Users/me | ruby -rjson -e 'puts JSON.pretty_generate JSON.parse(ARGF.read)'
+$ tjplurk api /APP/Users/me | ruby -rjson -e 'jj JSON.parse(ARGF.read)'
 ```
 
 ### Commands
