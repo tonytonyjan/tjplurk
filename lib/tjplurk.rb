@@ -7,6 +7,4 @@ module Tjplurk
     access_token_path:  '/OAuth/access_token',
     authorize_path:     '/OAuth/authorize'
   }
-
-  TJPLURK_FILE = File.join(ENV['HOME'], '.tjplurk')
 end

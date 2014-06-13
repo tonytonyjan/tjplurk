@@ -13,13 +13,13 @@ module Tjplurk
       Launchy.open(api.request_token.authorize_url)
       oauth_verifier = ask 'Enter Verification Number:'
       access_token = api.request_token.get_access_token oauth_verifier: oauth_verifier
-      File.open(Tjplurk::TJPLURK_FILE, 'w') do |f|
+      File.open(Tjplurk::API.config_file_path, 'w') do |f|
         f.puts consumer_key
         f.puts consumer_secret
         f.puts access_token.token
         f.puts access_token.secret
       end
-      puts "Key & secret successfully saved to \"#{Tjplurk::TJPLURK_FILE}\"."
+      puts "Key & secret successfully saved to \"#{Tjplurk::API.config_file_path}\"."
     end
 
     desc 'api PATH ["FOO=BAR" ...]', 'send an API request.'

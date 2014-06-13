@@ -5,10 +5,14 @@ module Tjplurk
   class API
     attr_reader :consumer, :request_token, :access_token
 
+    def self.config_file_path
+      ENV['TJPLURK_FILE'] || File.join(ENV['HOME'], '.tjplurk')
+    end
+
     def initialize(consumer_key = nil, consumer_secret = nil, token_key = nil, token_secret = nil)
       if consumer_key.nil? || consumer_secret.nil?
-        raise 'Consumer key & secret are not found.' unless File.exist? TJPLURK_FILE
-        consumer_key, consumer_secret, token_key, token_secret = File.readlines(TJPLURK_FILE).map(&:strip!).delete_if(&:empty?)
+        raise 'Consumer key & secret are not found.' unless File.exist? Tjplurk::API.config_file_path
+        consumer_key, consumer_secret, token_key, token_secret = File.readlines(Tjplurk::API.config_file_path).map(&:strip!).delete_if(&:empty?)
       end
       @consumer = OAuth::Consumer.new(consumer_key, consumer_secret, Tjplurk::OAUTH_OPTIONS)
       @access_token = OAuth::AccessToken.new(@consumer, token_key, token_secret) if token_key && token_secret

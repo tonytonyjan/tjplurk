@@ -19,6 +19,8 @@ api = Tjplurk::API.new
 api.request('/APP/Users/me')
 ```
 
+Set `ENV['TJPLURK_FILE']` to customize the config file path.
+
 ### Real Time Notification
 
 ```ruby

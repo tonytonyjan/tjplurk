@@ -1,4 +1,4 @@
-require 'tjplurk/api'
+require 'tjplurk'
 require 'json'
 
 describe Tjplurk::API do

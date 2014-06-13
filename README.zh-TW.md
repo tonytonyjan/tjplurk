@@ -19,6 +19,8 @@ api = Tjplurk::API.new
 api.request('/APP/Users/me')
 ```
 
+或者可以透過 `ENV['TJPLURK_FILE']` 指定設定檔位置
+
 ### 即時通知偵測
 
 ```ruby
