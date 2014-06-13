@@ -21,5 +21,16 @@ module Tjplurk
     def request path, body = '', headers = {}
       JSON.parse(@access_token.post(path, body, headers).body)
     end
+
+    def real_time
+      ret = request('/APP/Realtime/getUserChannel')
+      comet_server = ret['comet_server']
+      loop do
+        uri = URI(comet_server)
+        json = JSON.parse(Net::HTTP.get(uri)[/CometChannel.scriptCallback\((.*)\);/m, 1])
+        json['data'].each{ |plurk| yield plurk } if json['data']
+        comet_server.sub!(/(offset=)\d+/, "\\1#{json['new_offset']}")
+      end
+    end
   end
 end

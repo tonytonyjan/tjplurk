@@ -19,6 +19,17 @@ api = Tjplurk::API.new
 api.request('/APP/Users/me')
 ```
 
+### Real Time Notification
+
+```ruby
+require 'tjplurk'
+
+api = Tjplurk::API.new
+api.real_time do |plurk|
+  puts JSON.pretty_generate plurk
+end
+```
+
 ## Command Line Usage
 
 For the first time, you should use `tjplurk auth` to get access token and secret:

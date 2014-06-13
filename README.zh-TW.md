@@ -19,6 +19,17 @@ api = Tjplurk::API.new
 api.request('/APP/Users/me')
 ```
 
+### 即時通知偵測
+
+```ruby
+require 'tjplurk'
+
+api = Tjplurk::API.new
+api.real_time do |plurk|
+  puts JSON.pretty_generate plurk
+end
+```
+
 ## 在命令列中使用
 
 第一次使用的時候，可以先透過 `tjplurk auth` 取得 access token：
