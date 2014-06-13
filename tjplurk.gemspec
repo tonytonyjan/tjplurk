@@ -2,11 +2,11 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'tjplurk/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'TJPlurk'
+  s.name        = 'tjplurk'
   s.version     = Tjplurk::VERSION
   s.licenses    = ['MIT']
-  s.summary     = 'TJPlurk'
-  s.description = 'TJPlurk'
+  s.summary     = 'Plurk API Wrapper'
+  s.description = 'Plurk API Wrapper'
   s.authors     = ['Tony Jian']
   s.email       = 'tonytonyjan@gmail.com'
   s.files       = Dir['lib/**/*.rb']
