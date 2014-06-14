@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/tonytonyjan/tjplurk'
   s.add_runtime_dependency 'oauth'
   s.add_runtime_dependency 'thor'
+  s.add_runtime_dependency 'launchy'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'launchy'
 end
