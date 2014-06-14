@@ -34,6 +34,7 @@ end
 
 ### Examples
 
+- [Echo](https://github.com/tonytonyjan/tjplurk/blob/master/examples/echo.rb)
 - [Plurk Robot](https://github.com/tonytonyjan/tjplurk/blob/master/examples/robot.rb)
 
 ## Command Line Usage

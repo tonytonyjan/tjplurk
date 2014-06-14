@@ -34,6 +34,7 @@ end
 
 ### 範例
 
+- [Echo](https://github.com/tonytonyjan/tjplurk/blob/master/examples/echo.rb)
 - [噗浪機器人](https://github.com/tonytonyjan/tjplurk/blob/master/examples/robot.rb)
 
 ## 在命令列中使用
