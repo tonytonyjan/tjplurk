@@ -1,5 +1,4 @@
 require 'tjplurk/api'
-
 module Tjplurk
   OAUTH_OPTIONS = {
     site:               'http://www.plurk.com',
