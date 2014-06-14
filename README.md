@@ -32,6 +32,10 @@ api.real_time do |plurk|
 end
 ```
 
+### Examples
+
+- [Plurk Robot](https://github.com/tonytonyjan/tjplurk/blob/master/examples/robot.rb)
+
 ## Command Line Usage
 
 For the first time, you should use `tjplurk auth` to get access token and secret:

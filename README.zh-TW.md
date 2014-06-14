@@ -32,6 +32,10 @@ api.real_time do |plurk|
 end
 ```
 
+### 範例
+
+- [噗浪機器人](https://github.com/tonytonyjan/tjplurk/blob/master/examples/robot.rb)
+
 ## 在命令列中使用
 
 第一次使用的時候，可以先透過 `tjplurk auth` 取得 access token：
