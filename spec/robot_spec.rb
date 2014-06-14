@@ -16,9 +16,14 @@ describe Tjplurk::Robot do
     - 晚安
     - 有個好夢
     - 偶爾睡一下也不錯啦
+- name: 為什麼
+  pattern: ^為什麼(.*)
+  responses:
+    - 我也不知道為什麼\\1
 EOS
     robot = Tjplurk::Robot.new topics
     expect(topics[0].responses.map(&:content)).to include(robot.respond('早安'))
-    expect(topics[1].responses.map(&:content)).to include(robot.respond('晚安！'))
+    expect(topics[1].responses.map(&:content)).to include(robot.respond('晚安 ！'))
+    expect(robot.respond('為什麼老是睡成這樣')).to eq '我也不知道為什麼老是睡成這樣'
   end
 end
