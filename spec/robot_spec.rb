@@ -25,5 +25,6 @@ EOS
     expect(topics[0].responses.map(&:content)).to include(robot.respond('早安'))
     expect(topics[1].responses.map(&:content)).to include(robot.respond('晚安 ！'))
     expect(robot.respond('為什麼老是睡成這樣')).to eq '我也不知道為什麼老是睡成這樣'
+    expect(robot.respond('asdfa sdfasdfasdfasdf')).to eq nil
   end
 end

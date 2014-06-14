@@ -8,7 +8,7 @@ module Tjplurk
       class << self
         def load yaml
           YAML.load(yaml).map do |attributes|
-            topic = self.new name: attributes['name'], pattern: Regexp.new(attributes['pattern'])
+            topic = self.new name: attributes['name'], pattern: attributes['pattern']
             topic.responses = attributes['responses'].map{|res| Response.new(topic: topic, content: res)}
             topic
           end
